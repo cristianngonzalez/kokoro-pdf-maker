@@ -1,5 +1,6 @@
 const { createDocument } = require("./src/createDocument.js");
-
+const uuid = require('uuid');
+const fs = require("fs");
 
 let data = {
 	nombre_cliente:"Cristian Gonzalez",
@@ -118,4 +119,21 @@ let data = {
 	]
 }
 
+
+/*Uncomment in production (pdf in temporary files)
+try{
+	var fileName = `./tmp/document-${uuid.v4()}.pdf`;
+	if (!fs.existsSync(fileName)){
+	  // file written successfully
+	  createDocument(data , fileName);
+
+	  //Delete temporary file pdf
+	  //fs.rmSync(`.tmp/${fileName}`, {recursive: true, force: true});
+	}
+}catch (err) {
+	console.error(err);
+}
+*/
+
+//Uncomment in production (pdf in temporary files)
 createDocument(data , "document.pdf");
