@@ -1,4 +1,6 @@
 async function generateHeader(doc , directory , data , page , totalPages) {
+
+
     let date = new Date();
     
     //Background
@@ -18,7 +20,12 @@ async function generateHeader(doc , directory , data , page , totalPages) {
       .fontSize(10.5).fillColor('#C7C7C7').text(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`, 0, 17, { align: "right" })
       .fillColor('black').text(`Página ${page} de ${totalPages}`, 0, 35, { align: "right" })
   
+
+
+      .image("assets/svg_potenciado.png", 239, 735, { width: 100 })
       .moveDown();
+
+      
 }
 
 
