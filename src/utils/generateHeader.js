@@ -1,6 +1,5 @@
 async function generateHeader(doc , directory , data , page , totalPages) {
 
-
     let date = new Date();
     
     //Background
