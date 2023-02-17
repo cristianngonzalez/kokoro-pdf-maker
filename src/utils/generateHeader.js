@@ -22,7 +22,7 @@ async function generateHeader(doc , directory , data , page , totalPages) {
   
 
 
-      .image("assets/svg_potenciado.png", 239, 735, { width: 110 })
+      .image("assets/svg_potenciado.png", 237, 737, { width: 120 })
       .moveDown();
 
       
