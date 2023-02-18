@@ -120,20 +120,23 @@ let data = {
 }
 
 
-/*Uncomment in production (pdf in temporary files)
+//Uncomment in production (pdf in temporary files)
+/**/
 try{
-	var fileName = `./tmp/document-${uuid.v4()}.pdf`;
-	if (!fs.existsSync(fileName)){
-	  // file written successfully
-	  createDocument(data , fileName);
+	var fileName = `./tmp/${data.nombre_cliente} - ${data.nombre_evaluacion}.pdf`;
+		// file written successfully
+		document = createDocument(data , fileName);
 
-	  //Delete temporary file pdf
-	  //fs.rmSync(`.tmp/${fileName}`, {recursive: true, force: true});
-	}
+		setTimeout(()=>{
+			fs.rmSync(fileName , {recursive: true, force: true});
+		} , 2000);
+		
 }catch (err) {
 	console.error(err);
+}finally{
+	//Delete temporary file pdf
 }
-*/
+
 
 //Uncomment in production (pdf in temporary files)
-createDocument(data , "document.pdf");
+//createDocument(data , "document.pdf");
