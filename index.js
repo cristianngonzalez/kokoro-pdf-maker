@@ -4,10 +4,12 @@ const fs = require("fs");
 
 let data = {
 	nombre_cliente:"Cristian Gonzalez",
-	correo_cliente:"contact@cristanngonzalez.com",
-	porcentaje_calce: 80,
+	correo_cliente:"contact@cristianngonzalez.com",
+	porcentaje_calce: 120,
 	nombre_evaluacion: "Wholesales Manager",
 	path_logo_empresa: "ruta_logo",
+	fecha_invitacion:"20/05/2023",
+	fecha_finalizacion:"20/10/2023 15:46",
 	test: [
 		{
 			escala: "correctas",

@@ -1,8 +1,13 @@
 const {generateChartPie} = require("./generateChartPie");
+const {fechaInvitacionFormat} = require("./fechaInvitacionFormat");
+const {fechaFinalizacionFormat} = require("./fechaFinalizacionFormat");
 
 async function generateFirstPage(doc , directory , data ){
 
     let date = new Date();
+
+    const invitacionDate = fechaInvitacionFormat(data.fecha_invitacion);
+    const finalizacionDate = fechaFinalizacionFormat(data.fecha_finalizacion);
 
     doc.image("assets/firstpage.png" , 0 , 0 , {with: 300})
     doc.image("assets/logo.png", 64, 25, { width: 46 })
@@ -28,15 +33,18 @@ async function generateFirstPage(doc , directory , data ){
 
     .font("Helvetica-Bold").fontSize(10).fillColor('black')
     .text(`Fecha de invitación` , 64 , 197 , {align: 'left'})
+    .text(`${invitacionDate}` , 64 , 212 , {align: 'left'})
+    .fontSize(12)
 
     .font("Helvetica-Bold").fontSize(10).fillColor('black')
     .text(`Fecha de finalización` , 265 , 197 , {align: 'left'})
+    .text(`${finalizacionDate}` , 265 , 212 , {align: 'left'})
+    .fontSize(12)
 
     .font("Helvetica-Bold").fontSize(10).fillColor('black')
     .text(`Puntaje de calce` , 475 , 197 , {align: 'left'})
     .fontSize(12)
     .text(`${data.porcentaje_calce}%` , 475 , 212 , {align: 'left'})
-
     .font("Helvetica-Bold")
     .fontSize(27).fillColor('#FE9A00').text(`${data.porcentaje_calce}% de calce`, 55, 575 , {align: 'center'})
     

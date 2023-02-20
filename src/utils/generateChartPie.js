@@ -21,9 +21,9 @@ async function generateChartPie(doc , directory , data){
       backgroundColor = ["#ED8100", "#FE9A00"]
 
     }else{
-      statTwo = data.porcentaje_calce;
-      statOne = statTwo - 100;
-      backgroundColor = ["#EAEAEA" , "#FE9A00"];
+      statOne = data.porcentaje_calce;
+      statTwo = statOne - 100;
+      backgroundColor = [ "#FE9A00" , "#EAEAEA"];
     }
 
     const configuration = {
@@ -55,7 +55,7 @@ async function generateChartPie(doc , directory , data){
       if (!fs.existsSync(`${directory}/${fileName}`)){
         // file written successfully
         fs.writeFileSync(`${directory}/${fileName}`, imageBuffer);
-        doc.image(`${directory}/${fileName}`, 155, 322, {width: 300})
+        doc.image(`${directory}/${fileName}`, 149, 260, {width: 300})
         //Delete temporary file chart
         fs.rmSync(`${directory}/${fileName}`, {recursive: true, force: true});
       }
