@@ -25,7 +25,6 @@ async function createDocument(data , path) {
   totalPages = Math.ceil(totalPages) + 1;
 
 
-  await generateHeader(doc , directory , data , 1 , totalPages);
   await generateFirstPage(doc , directory , data);
 
   doc.addPage();

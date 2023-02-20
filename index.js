@@ -4,7 +4,7 @@ const fs = require("fs");
 
 let data = {
 	nombre_cliente:"Cristian Gonzalez",
-	correo_cliente:"contact@cristianngonzalez.com",
+	correo_cliente:"contact@cristanngonzalez.com",
 	porcentaje_calce: 80,
 	nombre_evaluacion: "Wholesales Manager",
 	path_logo_empresa: "ruta_logo",
@@ -121,7 +121,7 @@ let data = {
 
 
 //Uncomment in production (pdf in temporary files)
-/**/
+/*
 try{
 	var fileName = `./tmp/${data.nombre_cliente} - ${data.nombre_evaluacion}.pdf`;
 		// file written successfully
@@ -136,6 +136,7 @@ try{
 }finally{
 	//Delete temporary file pdf
 }
+*/
 
 //Uncomment in production (pdf in temporary files)
-//createDocument(data , "document.pdf");
+createDocument(data , "document.pdf");
