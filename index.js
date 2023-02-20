@@ -120,20 +120,22 @@ let data = {
 }
 
 
-/*Uncomment in production (pdf in temporary files)
+/*Uncomment in production (pdf in temporary files)*/
 try{
 	var fileName = `./tmp/document-${uuid.v4()}.pdf`;
 	if (!fs.existsSync(fileName)){
 	  // file written successfully
 	  createDocument(data , fileName);
-
 	  //Delete temporary file pdf
-	  //fs.rmSync(`.tmp/${fileName}`, {recursive: true, force: true});
+	  fs.rmSync(`.tmp/${fileName}`, {recursive: true, force: true});
 	}
 }catch (err) {
 	console.error(err);
 }
-*/
+
+
+
+
 
 //Uncomment in production (pdf in temporary files)
-createDocument(data , "document.pdf");
+//createDocument(data , "postulante.pdf");
