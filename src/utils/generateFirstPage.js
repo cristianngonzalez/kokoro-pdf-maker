@@ -30,7 +30,7 @@ async function generateFirstPage(doc , directory , data ){
     .text(`Fecha de invitación` , 64 , 197 , {align: 'left'})
 
     .font("Helvetica-Bold").fontSize(10).fillColor('black')
-    .text(`Fecha de invitación` , 265 , 197 , {align: 'left'})
+    .text(`Fecha de finalización` , 265 , 197 , {align: 'left'})
 
     .font("Helvetica-Bold").fontSize(10).fillColor('black')
     .text(`Puntaje de calce` , 475 , 197 , {align: 'left'})
