@@ -138,4 +138,4 @@ try{
 }
 
 //Uncomment in production (pdf in temporary files)
-//createDocument(data , "document.pdf");
+createDocument(data , "document.pdf");
