@@ -55,7 +55,7 @@ async function generateChartPie(doc , directory , data){
       if (!fs.existsSync(`${directory}/${fileName}`)){
         // file written successfully
         fs.writeFileSync(`${directory}/${fileName}`, imageBuffer);
-        doc.image(`${directory}/${fileName}`, 149, 260, {width: 300})
+        doc.image(`${directory}/${fileName}`, 160, 320, {width: 300})
         //Delete temporary file chart
         fs.rmSync(`${directory}/${fileName}`, {recursive: true, force: true});
       }
