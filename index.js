@@ -12,7 +12,16 @@ let data = {
 	path_logo_empresa: "ruta_logo",
 	fecha_invitacion: "20/05/2023",
 	fecha_finalizacion: "20/10/2023 15:46",
+
 	path_imagen_evaluado: "https://www.65ymas.com/uploads/s1/28/57/55/elegir-el-mejor-ordenador-para-personas-mayores_1_621x621.jpeg",
+
+	ip_evaluado:"192.168.0.1",
+	dispositivo:"Desktop",
+	pais:"Chile",
+	camara_habilitada:true,
+	fullscreen: true,
+
+
 	test: [
 		{
 			escala: "correctas",

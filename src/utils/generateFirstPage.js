@@ -2,7 +2,8 @@ const {generateChartPie} = require("./generateChartPie");
 const {fechaInvitacionFormat} = require("./fechaInvitacionFormat");
 const {fechaFinalizacionFormat} = require("./fechaFinalizacionFormat");
 
-const {downloadAndPrintPicture} = require("../utils/downloadAndPrintPicture")
+const {downloadAndPrintPicture} = require("../utils/downloadAndPrintPicture");
+const {yesOrNotPrint} = require('../utils/yesOrNotPrint');
 
 async function generateFirstPage(doc , directory , data ){
 
@@ -49,20 +50,37 @@ async function generateFirstPage(doc , directory , data ){
     .fontSize(12)
     .text(`${data.porcentaje_calce}%` , 475 , 212 , {align: 'left'})
     .font("Helvetica-Bold")
-    .fontSize(27).fillColor('#FE9A00').text(`${data.porcentaje_calce}% de calce`, 55, 575 , {align: 'center'})
+    .fontSize(15).fillColor('#FE9A00').text(`${data.porcentaje_calce}% de calce`, 55, 615 , {align: 'center'})
     
     .font("Helvetica").fontSize(10).fillColor('#C7C7C7')
     .text( "Los resultados de esta evaluación están basados en las respuestas al cuestionario de TestKokoro. El propósito de esta evaluación es proporcionar información de apoyo para tomar mejores decisiones de contratación basadas en datos.", 57, 655 , {width: 500 , lineGap: 2.5 , align: 'center'})
     
     .image("assets/svg_potenciado.png", 237, 737, { width: 120 })
+
+    await downloadAndPrintPicture(doc , directory , data.path_imagen_evaluado);
   
     await generateChartPie(doc , directory , data);
 
-    //await downloadAndPrintPicture(doc , directory , data.path_imagen_evaluado);
 
+    //Anticheating data
+    doc.image("assets/camera.png", 80 , 325 , { width: 18 })
+    .font("Helvetica-Bold").fontSize(14).fillColor('black')
+    .text('Anti-cheating monitor' , 105 , 327)
 
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('Dispositivo Utilizado:' , 80 , 370)
+    doc.font('Helvetica-Bold').fontSize(10).text(data.dispositivo , 300 , 370)
 
-    
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 80 , 400);
+    yesOrNotPrint(doc , 397 , true);
+
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Webcam encendida?' , 80 , 430)
+    yesOrNotPrint(doc , 427 , true);
+
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Full-screen activo durante todo el test?' , 80 , 460)
+    yesOrNotPrint(doc , 457 , true);
+
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 80 , 490)
+    yesOrNotPrint(doc , 487 , true);
 
 }
 
