@@ -70,17 +70,17 @@ async function generateFirstPage(doc , directory , data ){
     doc.font('Helvetica').fontSize(10).fillColor('black').text('Dispositivo Utilizado:' , 80 , 370)
     doc.font('Helvetica-Bold').fontSize(10).text(data.dispositivo , 300 , 370)
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 80 , 400);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 80 , 400, {characterSpacing: -0.5});
     yesOrNotPrint(doc , 397 , true);
 
     doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Webcam encendida?' , 80 , 430)
-    yesOrNotPrint(doc , 427 , true);
+    yesOrNotPrint(doc , 427 , data.camara_habilitada);
 
     doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Full-screen activo durante todo el test?' , 80 , 460)
-    yesOrNotPrint(doc , 457 , true);
+    yesOrNotPrint(doc , 457 , data.fullscreen);
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 80 , 490)
-    yesOrNotPrint(doc , 487 , true);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 80 , 490, {characterSpacing: -0.25})
+    yesOrNotPrint(doc , 487 , data.mouse_on_window);
 
 }
 
