@@ -2,9 +2,12 @@ const {generateChartPie} = require("./generateChartPie");
 const {fechaInvitacionFormat} = require("./fechaInvitacionFormat");
 const {fechaFinalizacionFormat} = require("./fechaFinalizacionFormat");
 
+const {downloadAndPrintPicture} = require("../utils/downloadAndPrintPicture")
+
 async function generateFirstPage(doc , directory , data ){
 
     let date = new Date();
+
 
     const invitacionDate = fechaInvitacionFormat(data.fecha_invitacion);
     const finalizacionDate = fechaFinalizacionFormat(data.fecha_finalizacion);
@@ -54,6 +57,13 @@ async function generateFirstPage(doc , directory , data ){
     .image("assets/svg_potenciado.png", 237, 737, { width: 120 })
   
     await generateChartPie(doc , directory , data);
+
+    //await downloadAndPrintPicture(doc , directory , data.path_imagen_evaluado);
+
+
+
+    
+
 }
 
 module.exports = {

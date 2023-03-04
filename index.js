@@ -2,14 +2,17 @@ const { createDocument } = require("./src/createDocument.js");
 const uuid = require('uuid');
 const fs = require("fs");
 
+
+
 let data = {
-	nombre_cliente:"Cristian Gonzalez",
-	correo_cliente:"contact@cristianngonzalez.com",
-	porcentaje_calce: 120,
-	nombre_evaluacion: "Wholesales Manager",
+	nombre_cliente: "Pablo Aimar",
+	correo_cliente: "contact@cristianngonzalez.com",
+	porcentaje_calce: 70,
+	nombre_evaluacion: "Project Manager",
 	path_logo_empresa: "ruta_logo",
-	fecha_invitacion:"20/05/2023",
-	fecha_finalizacion:"20/10/2023 15:46",
+	fecha_invitacion: "20/05/2023",
+	fecha_finalizacion: "20/10/2023 15:46",
+	path_imagen_evaluado: "https://www.65ymas.com/uploads/s1/28/57/55/elegir-el-mejor-ordenador-para-personas-mayores_1_621x621.jpeg",
 	test: [
 		{
 			escala: "correctas",
@@ -120,6 +123,8 @@ let data = {
     	},
 	]
 }
+
+
 
 
 //Uncomment in production (pdf in temporary files)
