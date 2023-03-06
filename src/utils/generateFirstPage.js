@@ -63,7 +63,7 @@ async function generateFirstPage(doc , directory , data ){
 
 
     //Anticheating data
-    doc.image("assets/camera.png", 80 , 325 , { width: 18 })
+    doc.image("assets/secure.png", 80 , 320 , { width: 18 })
     .font("Helvetica-Bold").fontSize(14).fillColor('black')
     .text('Medidas anti-trampa' , 105 , 327)
 
