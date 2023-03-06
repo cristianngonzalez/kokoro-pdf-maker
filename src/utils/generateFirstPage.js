@@ -65,7 +65,7 @@ async function generateFirstPage(doc , directory , data ){
     //Anticheating data
     doc.image("assets/camera.png", 80 , 325 , { width: 18 })
     .font("Helvetica-Bold").fontSize(14).fillColor('black')
-    .text('Anti-cheating monitor' , 105 , 327)
+    .text('Medidas anti-trampa' , 105 , 327)
 
     doc.font('Helvetica').fontSize(10).fillColor('black').text('Dispositivo Utilizado:' , 80 , 370)
     doc.font('Helvetica-Bold').fontSize(10).text(data.dispositivo , 300 , 370)
