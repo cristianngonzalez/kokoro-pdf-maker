@@ -50,7 +50,7 @@ async function generateFirstPage(doc , directory , data ){
     .fontSize(12)
     .text(`${data.porcentaje_calce}%` , 475 , 212 , {align: 'left'})
     .font("Helvetica-Bold")
-    .fontSize(15).fillColor('#FE9A00').text(`${data.porcentaje_calce}% de calce`, 55, 615 , {align: 'center'})
+    .fontSize(15).fillColor('#FE9A00').text(`${data.porcentaje_calce}% de calce`, 55, 630 , {align: 'center'})
     
     .font("Helvetica").fontSize(10).fillColor('#C7C7C7')
     .text( "Los resultados de esta evaluación están basados en las respuestas al cuestionario de TestKokoro. El propósito de esta evaluación es proporcionar información de apoyo para tomar mejores decisiones de contratación basadas en datos.", 57, 655 , {width: 500 , lineGap: 2.5 , align: 'center'})
@@ -67,20 +67,23 @@ async function generateFirstPage(doc , directory , data ){
     .font("Helvetica-Bold").fontSize(14).fillColor('black')
     .text('Medidas anti-trampa' , 105 , 327)
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('Dispositivo Utilizado:' , 80 , 370)
-    doc.font('Helvetica-Bold').fontSize(10).text(data.dispositivo , 300 , 370)
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('Dispositivo Utilizado:' , 80 , 360)
+    doc.font('Helvetica-Bold').fontSize(10).text(data.dispositivo , 300 , 360)
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 80 , 400, {characterSpacing: -0.5});
-    yesOrNotPrint(doc , 397 , true);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('Pais:' , 80 , 390)
+    doc.font('Helvetica-Bold').fontSize(10).text(data.pais , 300 , 390)
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Webcam encendida?' , 80 , 430)
-    yesOrNotPrint(doc , 427 , data.camara_habilitada);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 80 , 420 , {characterSpacing: -0.5});
+    yesOrNotPrint(doc , 417 , true);
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Full-screen activo durante todo el test?' , 80 , 460)
-    yesOrNotPrint(doc , 457 , data.fullscreen);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Webcam encendida?' , 80 , 450)
+    yesOrNotPrint(doc , 447 , data.camara_habilitada);
 
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 80 , 490, {characterSpacing: -0.25})
-    yesOrNotPrint(doc , 487 , data.mouse_on_window);
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Full-screen activo durante todo el test?' , 80 , 480)
+    yesOrNotPrint(doc , 477 , data.fullscreen);
+
+    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 80 , 510, {characterSpacing: -0.25})
+    yesOrNotPrint(doc , 507 , data.mouse_on_window);
 
 }
 
