@@ -9,10 +9,10 @@ function printDateHeaderFirstPage(doc) {
         case 0: dayOfWeek = 'Domingo';break;
         case 1: dayOfWeek = 'Lunes';break;
         case 2: dayOfWeek = 'Martes';break;
-        case 3: dayOfWeek = 'Miercoles';break;
+        case 3: dayOfWeek = 'Miércoles';break;
         case 4: dayOfWeek = 'Jueves';break;
         case 5: dayOfWeek = 'Viernes';break;
-        case 6: dayOfWeek = 'Sabado';break;
+        case 6: dayOfWeek = 'Sábado';break;
     }
 
     switch(date.getMonth()){
