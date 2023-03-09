@@ -9,7 +9,7 @@ const uuid = require('uuid');
     rate: percent to show in chart
 */
 async function generateChartPie(doc , directory , data){
-    const chartJSNodeCanvas = new ChartJSNodeCanvas({ type: 'png', width: 800, height: 600 });
+    const chartJSNodeCanvas = new ChartJSNodeCanvas({ type: 'png', width: 400, height: 300 });
 
     //data.porcentaje_calce may be greater than 100
     let statOne;
@@ -55,7 +55,7 @@ async function generateChartPie(doc , directory , data){
       if (!fs.existsSync(`${directory}/${fileName}`)){
         // file written successfully
         fs.writeFileSync(`${directory}/${fileName}`, imageBuffer);
-        doc.image(`${directory}/${fileName}`, 250 , 530 , {width: 120})
+        doc.image(`${directory}/${fileName}`, 420 , 200 , {width: 45})
         //Delete temporary file chart
         fs.rmSync(`${directory}/${fileName}`, {recursive: true, force: true});
       }

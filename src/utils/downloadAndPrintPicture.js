@@ -22,7 +22,7 @@ async function downloadAndPrintPicture(doc , directory , uri){
 
 	try{
 
-		await doc.image(filename, 350, 320, {width: 180})
+		await doc.image( filename, 375, 320, {width: 180} )
 		fs.rmSync(filename, {recursive: true, force: true});
 			
 	}catch (err) {

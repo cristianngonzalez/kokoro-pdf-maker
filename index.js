@@ -21,6 +21,18 @@ let data = {
 	fullscreen: false,
 	mouse_on_window: false,
 
+	evaluaciones:[
+		{
+			nombre_evaluacion: "prueba de liderazgo",
+			cumple_tiempo: true,
+		},
+		{
+			nombre_evaluacion: "prueba de matematicas",
+			cumple_tiempo: false,
+		},
+
+	],
+
 
 	test: [
 		{
