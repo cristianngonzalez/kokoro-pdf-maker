@@ -142,7 +142,9 @@ let data = {
 				puntaje_calibrado :80,
 				texto_resultado: "En la escala DISPOSICIÓN GENERAL PARA LA VENTA. Es el índice más discriminativo de los buenos_vendedores Se desenvolvería dentro de lo esperado. Logrando establecer relaciones con sus clientes y buscando persuadirlos."
     	},
-	]
+	],
+	
+	ia_summary: "El reporte de evaluación de estilo de venta muestra que esta persona posee cualidades empáticas y una gran capacidad de adaptación rápida y fácil a situaciones y personas diferentes. Además, es una persona segura y activa que no rechaza los riesgos por algo útil, sin embargo, no es una persona sociable y prefiere la soledad a la compañía. En cuanto a la tolerancia a la frustración, obtuvo un puntaje promedio, pero comprenderá el motivo de los fracasos sin personalizar las situaciones. Este perfil de ventas se corresponde con el tipo ´receptivo´ y ´agresivo´, lo que implica la capacidad de sedentarismo o de representación en un mercado ya implantado y con capacidad competitiva ante otros clientes o productos. En general, esta persona podría tener un buen desempeño en el área de ventas siempre que pueda trabajar de manera independiente y tenga la oportunidad de aplicar sus habilidades empáticas y de adaptación en su trabajo diario."
 }
 
 

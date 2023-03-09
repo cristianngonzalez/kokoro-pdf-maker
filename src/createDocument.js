@@ -5,11 +5,18 @@ const uuid = require('uuid');
 //Utils
 const {generateHeader} = require("./utils/generateHeader");
 const {generateFirstPage} = require("./utils/generateFirstPage");
+const {generateIAResumePage} = require("./utils/generateIAResumePage");
 const {generateTest} = require("./utils/generateTest");
 const {generateHr} = require('./utils/generateHr');
 
 
-
+//Agregar metodo al prototype de los string ya que em6 no tiene capitalize en strings
+Object.defineProperty(String.prototype, 'capitalize', {
+  value: function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  },
+  enumerable: false
+});
 
 
 async function createDocument(data , path) {
@@ -25,18 +32,20 @@ async function createDocument(data , path) {
 
   //Get TotalPages (apply three simple rule)
   totalPages = (data.test.length * 1) / 4;
-  //Sumamos uno al total, ya que la primera pagina donde no carga items cuenta
-  totalPages = Math.ceil(totalPages) + 1;
+  //Sumamos dos al total, ya que la primera pagina donde no carga items cuenta y la del reporte tampoco
+  totalPages = Math.ceil(totalPages) + 2;
 
 
   await generateFirstPage(doc , directory , data);
 
+  await generateIAResumePage(doc , directory , data , totalPages);
+
   doc.addPage();
-  await generateHeader(doc , directory , data , 2, totalPages);
+  await generateHeader(doc , directory , data , 3, totalPages);
 
   //Looping tests
   let y = 90//La primera altura es de 90, en el correr del loop ira subiendo hasta cambiar de pagina
-  let pageNumber = 2;//Como ya imprimimos la primera pagina, esta ya estara asignada a 2; luego ira incrementando
+  let pageNumber = 3;//Como ya imprimimos la primera pagina, esta ya estara asignada a 2; luego ira incrementando
   for(let i = 0; i < data.test.length; i++){
     //Analizar si cambiar de pagina
     if( ((i) % 4) == 0 && i !== 0 ){

@@ -7,12 +7,7 @@ const {yesOrNotPrint} = require('../utils/yesOrNotPrint');
 const {printDateHeaderFirstPage} = require('../utils/printDateHeaderFirstPage')
 
 
-Object.defineProperty(String.prototype, 'capitalize', {
-    value: function() {
-      return this.charAt(0).toUpperCase() + this.slice(1);
-    },
-    enumerable: false
-  });
+
 
 async function generateFirstPage(doc , directory , data ){
 
@@ -59,7 +54,7 @@ async function generateFirstPage(doc , directory , data ){
     .font("Helvetica-Bold")
     
     .font("Helvetica").fontSize(8.6).fillColor('#C7C7C7')
-    .text( "Los resultados de esta evaluación están basados en las respuestas al cuestionario de TestKokoro. El propósito de esta evaluación es proporcionar información de apoyo para tomar mejores decisiones de contratación basadas en datos.", 85, 680 , {width: 460 , lineGap: 2.5 , align: 'center'})
+    .text( "Los resultados de esta evaluación están basados en las respuestas al cuestionario de TestKokoro. El propósito de esta evaluación es proporcionar información de apoyo para tomar mejores decisiones de contratación basadas en datos.", 75, 680 , {width: 460 , lineGap: 2.5 , align: 'center'})
     
     .image("assets/svg_potenciado.png", 237, 737, { width: 120 })
 
