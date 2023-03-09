@@ -102,23 +102,6 @@ async function generateFirstPage(doc , directory , data ){
         heightEvaluacion += 30;
     });
 
-    /*
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Realizado desde la misma dirección ip?' , 60 , 530 , {characterSpacing: -0.5});
-    yesOrNotPrint(doc , 527 , true);
-
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Webcam encendida?' , 60 , 560 )
-    yesOrNotPrint(doc , 557 , data.camara_habilitada);
-
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Full-screen activo durante todo el test?' , 60 , 590 )
-    yesOrNotPrint(doc , 587 , data.fullscreen);
-
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 60 , 610 , {characterSpacing: -0.25})
-    yesOrNotPrint(doc , 607 , data.mouse_on_window);
-
-    doc.font('Helvetica').fontSize(10).fillColor('black').text('¿Mouse siempre sobre la ventana de evaluación?' , 60 , 640 , {characterSpacing: -0.25})
-    yesOrNotPrint(doc , 637 , data.mouse_on_window);
-    */
-
 }
 
 module.exports = {
