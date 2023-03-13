@@ -21,8 +21,10 @@ async function generateTest(doc , directory , test , y){
   doc.fontSize(10).font("Helvetica-Bold")
     .fillColor('black')
     .text(
-      `CORRECTAS`, 
-      50, y , { lineGap: 6})
+      `${test.escala.toUpperCase()}`, 
+      50, y , { lineGap: 6 , continued: true})
+    
+    .fontSize(10).font('Helvetica-Bold').fillColor(color).text(` ${test.medicion.toUpperCase()}`)
 
   
   .fontSize(10).fillColor('#afafaf').text( `${test.nombre_test.toLowerCase().capitalize()}` , {width: 500 , lineGap: 6})
@@ -31,12 +33,8 @@ async function generateTest(doc , directory , test , y){
     .fillColor('black')
     .text(
       `${test.texto_resultado}` , {width: 380 , lineGap: 4})
+    
   
-  .moveDown();
-
-  doc.fontSize(10).font('Helvetica-Bold')
-    .fillColor(color)
-    .text(`                        ${test.medicion.toUpperCase()}`, 50, y , {with: 500, lineGap: 6 })
   
   await generateChart( doc , directory , 430 , y , test.puntaje_obtenido , test.puntaje_calibrado );
 
